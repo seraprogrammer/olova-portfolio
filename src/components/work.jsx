@@ -1,4 +1,4 @@
-import { createSignal } from "../olova.js";
+import { createSignal } from "olova";
 import ProjectCard from "./ProjectCard";
 
 export default function Work() {
