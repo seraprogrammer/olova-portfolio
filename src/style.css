@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --card-width: 6rem; /* adjust to match your card's actual width */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.2);
+  color: white;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-450 {
+  animation-delay: 450ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-750 {
+  animation-delay: 750ms;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes smoke-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotateX(-10deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(0) rotateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px) rotateX(10deg);
+  }
+}
+
+.animate-smoke {
+  animation: smoke-animation 500ms ease-out forwards;
+}
+
+.rotate-x-90 {
+  transform: perspective(1000px) rotateX(-90deg);
+}
+
+.rotate-x-0 {
+  transform: perspective(1000px) rotateX(0deg);
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid currentColor;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Toast container styles for different positions */
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Position-specific styles */
+.toast-top-left {
+  top: 20px;
+  left: 20px;
+  animation: slideInLeft 0.3s ease-in-out;
+}
+
+.toast-top-right {
+  top: 20px;
+  right: 20px;
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+.toast-top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideInTop 0.3s ease-in-out;
+}
+
+.toast-bottom-left {
+  bottom: 20px;
+  left: 20px;
+  animation: slideInLeft 0.3s ease-in-out;
+}
+
+.toast-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+.toast-bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideInBottom 0.3s ease-in-out;
+}
+
+/* Animation keyframes */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
